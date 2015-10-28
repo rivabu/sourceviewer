@@ -15,4 +15,20 @@ startup met tomcat 6
 html url:
 http://localhost:8081/sourceviewer-rest/
 
+heroku
+======
+
+cd E:\java\STS-workspace\sourceviewer
+
+heroku login
+
+commit push changes to repo
+
+git push heroku master
+
+heroku open 
+
+https://sourceviewer.herokuapp.com/index.html
+
+
 
