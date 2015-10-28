@@ -1,0 +1,13 @@
+<div ng-controller="fileContentController">
+	<div id="source-code">
+		<div ng-if="binary == false">
+			
+				<div hljs source="getFileContent()"></div>
+		</div>
+
+	</div>
+	<div ng-if="binary == true">
+		<br /> <img data-ng-src="data:image/png;base64,{{getFileContent()}}" />
+	</div>
+
+</div>

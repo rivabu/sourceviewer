@@ -1,0 +1,19 @@
+<div>
+    <link href="/app/css/style.css" rel="stylesheet" />
+	<link href="/app/css/source.css" rel="stylesheet" />
+  	<div id="topnav" ng-include="'/app/partials/sourceHeader.html'"></div>
+  
+  	<div id="sidebar">
+  		<div ng-include="'/app/partials/project-tree.html'"></div>
+  	</div>
+  
+  	<div id="content" ng-include="'/app/partials/source.html'"></div>
+  
+  	<div id="sidebar-resizer" 
+  		resizer="vertical" 
+  		resizer-width="6" 
+  		resizer-left="#sidebar" 
+  		resizer-right="#content"
+  		resizer-max="400">
+  	</div>
+</div>

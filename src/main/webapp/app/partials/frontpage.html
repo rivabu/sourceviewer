@@ -1,0 +1,74 @@
+ <link href="/app/css/examples.css" rel="stylesheet" />
+  <div>
+  <!--[if lte IE 8]><p class=chromeframe>Your browser is not supported. Please upgrade to a newer browser to experience this site.</p><![endif]-->
+</div>
+
+  <div id="outer-container">
+    
+    <div>
+
+<div id="fb-root"></div>
+<div ng-include="'/app/partials/header.html'"></div></div>
+    <div id="container">
+      <div class="item-list">
+        <h1>Reference Projecten</h1>
+        <div class="list-header-desc">Onderstaande projecten zijn mijn reference projecten</div>
+        <div class="list-items">
+          <div  ng-repeat="project in projecten | filter: search | orderBy: 'id'" class="list-item">
+            <h2>
+              <a href="#/main/{{project.id}}">{{project.name}}</a> <img ng-click="delete(project.id)" src="/app/images/delete.png" />
+            </h2>
+            <div class="item-desc">
+              <span>{{project.description}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+  <div class="tags">
+    <h2>Tags</h2>
+    <hr />
+    <div class="tag-list">
+      <div class="tag">
+        <a href="/examples/angularjs">angularjs</a>
+      </div>
+      <div class="tag">
+        <a href="/examples/hibernate">hibernate</a>
+      </div>
+      <div class="tag">
+        <a href="/examples/java">java</a>
+      </div>
+      <div class="tag">
+        <a href="/examples/javascript">javascript</a>
+      </div>
+      <div class="tag">
+        <a href="/examples/jpa">jpa</a>
+      </div>
+      <div class="tag">
+        <a href="/examples/jsp">jsp</a>
+      </div>
+      <div class="tag">
+        <a href="/examples/maven">maven</a>
+      </div>
+      <div class="tag">
+        <a href="/examples/mongodb">mongodb</a>
+      </div>
+      <div class="tag">
+        <a href="/examples/spring">spring</a>
+      </div>
+      <div class="tag">
+        <a href="/examples/spring-data">spring-data</a>
+      </div>
+      <div class="tag">
+        <a href="/examples/spring-mvc">spring-mvc</a>
+      </div>
+      <div class="tag">
+        <a href="/examples/testing">testing</a>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+  <div>
+</div>

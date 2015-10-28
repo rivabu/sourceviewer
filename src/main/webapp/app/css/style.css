@@ -1,0 +1,55 @@
+#topnav {
+    background-color: #333333;
+    display: block;
+    height: 35px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #DDD;
+}
+
+#sidebar {
+	
+    position: absolute;
+    top: 35px;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    overflow: auto;
+}
+#content {
+    position: absolute;
+    top: 35px;
+    bottom: 0px;
+    left: 306px /* 300 + 6*/;
+    right: 0;
+    overflow: auto;
+    color: #FFF;
+    
+}
+#top-content {
+    position: absolute;
+    top: 0;
+    bottom: 0px; /* 130 + 6 */
+    left: 0;
+    right: 0;
+    background-color: #777;
+    overflow: auto;
+}
+
+
+#sidebar-resizer {
+	background-color: #666;
+    position: absolute;
+    top: 35px;
+    bottom: 0;
+    left: 300px;
+    width: 6px;
+    cursor: e-resize;
+}
+
+
+#sidebar-resizer:hover, #preview-resizer:hover {
+	background-color: #AAA;
+}

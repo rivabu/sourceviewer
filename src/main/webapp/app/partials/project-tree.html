@@ -1,0 +1,15 @@
+<div ng-controller="sourceTreeController">
+	<div id="project-explorer">
+		<div id="explorer-control">
+			<a href="" id="expand-all" ng-click="expandAll()">
+			<img
+				src="data:image/gif;base64,R0lGODlhEAAQAOMLAIuWq6WxwwFGevn9/9Xz//H7/+z6/+77//b9//r///z//////////////////////yH5BAEAAA8ALAAAAAAQABAAAARS8MlJq7026M1DDUQoih4FAmiqAtM5vqzkGrRA0/HjHrxA8Iecq0D0EQtCAoAgaDoFyJaSgAj5RMnlYOvbDoSBZWLsGydykqVirSCw0Y+VHEOPAAA7"
+				title="Expand All" />
+				</a> 
+			<a href="" id="collapse-all" ng-click="collapseAll()">
+			<img
+				src="data:image/gif;base64,R0lGODlhEAAQALMAAIuWq6WxwwFGevn9/9Xz//H7/+z6/+77//b9//r///z//////wAAAAAAAAAAAAAAACH5BAEAAAsALAAAAAAQABAAAARKcMlJq7026M1DDUQoih4FAmiqAtM5vqzkGnRNx4t77PyOu4WgMPgjAAiCpFJQKB4Rr5CTMKhaq7/AMcHtcnGSo2JMHoMXqzRmHQEAOw=="
+				title="Collapse All" /></a>
+		</div>
+		<div class="explorer-tree"><tree id="tree" content="parsedTree"></tree></div>
+</div>
