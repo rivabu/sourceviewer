@@ -30,5 +30,9 @@ heroku open
 
 https://sourceviewer.herokuapp.com/index.html
 
+local opstarten:
+- mvn clean install
+java -jar target/dependency/jetty-runner.jar --port 3000 target/*.war
+
 
 
