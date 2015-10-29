@@ -15,6 +15,12 @@ public class Project implements Serializable{
 	@NotEmpty
 	private String name;
 
+	@NotNull
+	@NotEmpty
+	private String zipFilename;
+
+
+
 	private String description;
 
 	public int getId() {
@@ -40,9 +46,17 @@ public class Project implements Serializable{
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public String getZipFilename() {
+		return zipFilename;
+	}
+
+	public void setZipFilename(String zipFilename) {
+		this.zipFilename = zipFilename;
+	}
 
 	@Override
 	public String toString() {
-		return "id=" + id + ", name=" + name + ", description=" + description;
+		return "id=" + id + ", name=" + name + ", zipname=" + zipFilename + ",description=" + description;
 	}
 }

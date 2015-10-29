@@ -11,6 +11,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,10 +35,7 @@ public class ProjectRestController {
 		List<ProjectBo> projectBos = this.projectService.listProjects();
 		List<Project> projecten = new ArrayList<Project>();
 		for (ProjectBo projectBo : projectBos) {
-			Project project = new Project();
-			project.setId(projectBo.getId());
-			project.setDescription(projectBo.getDescription());
-			project.setName(projectBo.getName());
+			Project project = mapToProject(projectBo);
 			projecten.add(project);
 		}
 		ProjectData projectData = new ProjectData();
@@ -46,17 +44,26 @@ public class ProjectRestController {
 		return response;
 	}
 
+	private Project mapToProject(ProjectBo projectBo) {
+		Project project = new Project();
+		project.setId(projectBo.getId());
+		project.setDescription(projectBo.getDescription());
+		project.setName(projectBo.getName());
+		if (StringUtils.isEmpty(projectBo.getZipFilename())) {
+			project.setZipFilename(projectBo.getName());
+		} else {
+			project.setZipFilename(projectBo.getZipFilename());
+		}
+		return project;
+	}
+
 	@RequestMapping(value = "/project/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Project> getProjectById(@PathVariable("id") int id) {
 		ProjectBo projectBo = null;
 		ResponseEntity<Project> response = null;
 		try {
 			projectBo = this.projectService.getProjectById(id);
-
-			Project project = new Project();
-			project.setId(projectBo.getId());
-			project.setDescription(projectBo.getDescription());
-			project.setName(projectBo.getName());
+			Project project = mapToProject(projectBo);
 			response = new ResponseEntity<Project>(project, OK);
 		} catch (Exception e) {
 			response = new ResponseEntity<>(NOT_FOUND);
@@ -66,7 +73,7 @@ public class ProjectRestController {
 
 	@RequestMapping(value = "/project/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<Object> removeProject(@PathVariable("id") int id) {
-		this.projectService.removeProject(id);
+		this.projectService.removeProject(id, true);
 		return new ResponseEntity<>(NO_CONTENT);
 	}
 
@@ -80,11 +87,13 @@ public class ProjectRestController {
 		int id = 0;
 		if (p.getId() == -1) {
 			// new person, add it
-			ProjectBo projectBo = this.projectService.getProjectByName(p.getName());
-			if (projectBo != null) {
-				this.projectService.removeProject(projectBo.getId());
+			ProjectBo excitingProjectBo = this.projectService.getProjectByName(p.getName());
+			if (excitingProjectBo != null) {
+				this.projectService.removeProject(excitingProjectBo.getId(), false);
+				id = excitingProjectBo.getId();
+			} else {
+				id = this.projectService.addProject(p);
 			}
-			id = this.projectService.addProject(p);
 		} else {
 			// throw exception
 		}

@@ -11,7 +11,7 @@ import com.rients.org.sourceviewer.domain.Tree;
 public class RestClient {
 
 	public int store(Project project) {
-		final String uri = "http://localhost:8081/sourceviewer-rest/project";
+		final String uri = "http://localhost:8081/project";
 	    project.setId(-1);
 	    RestTemplate restTemplate = new RestTemplate();
 	    ReturnId returnId = restTemplate.postForObject( uri, project, ReturnId.class);
@@ -21,7 +21,7 @@ public class RestClient {
 	}
 
 	public int store(Tree tree) {
-		final String uri = "http://localhost:8081/sourceviewer-rest/tree";
+		final String uri = "http://localhost:8081/tree";
 		RestTemplate restTemplate = new RestTemplate();
 	    ReturnId returnId = restTemplate.postForObject( uri, tree, ReturnId.class);
 	 
@@ -30,7 +30,7 @@ public class RestClient {
 	}
 
 	public String store(FileContent fileContent) {
-		final String uri = "http://localhost:8081/sourceviewer-rest/file";
+		final String uri = "http://localhost:8081/file";
 	    RestTemplate restTemplate = new RestTemplate();
 	    ReturnIdString returnId = restTemplate.postForObject( uri, fileContent, ReturnIdString.class);
 	 

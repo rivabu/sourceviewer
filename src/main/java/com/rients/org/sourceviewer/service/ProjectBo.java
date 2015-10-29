@@ -14,6 +14,8 @@ public class ProjectBo implements Serializable{
 	@NotNull
 	@NotEmpty
 	private String name;
+	
+	private String zipFilename;
 
 	private String description;
 
@@ -44,5 +46,13 @@ public class ProjectBo implements Serializable{
 	@Override
 	public String toString() {
 		return "id=" + id + ", name=" + name + ", description=" + description;
+	}
+
+	public String getZipFilename() {
+		return zipFilename;
+	}
+
+	public void setZipFilename(String zipFilename) {
+		this.zipFilename = zipFilename;
 	}
 }

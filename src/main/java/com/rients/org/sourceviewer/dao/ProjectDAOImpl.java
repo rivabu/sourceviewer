@@ -36,8 +36,13 @@ public class ProjectDAOImpl implements ProjectDAO {
 
 	
 	public ProjectBo readByName(String name) {
-		Query query = new Query(Criteria.where("name").is(name));
-		return this.mongoOps.findOne(query, ProjectBo.class, PROJECT_COLLECTION);
+		Query query = new Query(Criteria.where("zipFilename").is(name));
+		ProjectBo project = this.mongoOps.findOne(query, ProjectBo.class, PROJECT_COLLECTION);
+		if (project == null) {
+			query = new Query(Criteria.where("name").is(name));
+			project = this.mongoOps.findOne(query, ProjectBo.class, PROJECT_COLLECTION);
+		}
+		return project;
 	}
 	
 	public void update(ProjectBo p) {

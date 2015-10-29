@@ -6,7 +6,7 @@ import java.io.IOException;
 public class DirCleaner {
 
 	public void cleanup(String root) throws IOException {
-		File directory = new File(root + "//processing");
+		File directory = new File(root + "//2-processing");
         
 		// if the output directory doesn't exist, create it
 		if(directory.exists()) {

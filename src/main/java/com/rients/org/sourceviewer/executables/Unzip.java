@@ -16,25 +16,27 @@ public class Unzip {
 
 	String zipFile = null;
 	String processingFolder = null;
+	String doneFolder = null;
 	String root = null;
 	List<String> ignores = null;
 
 	public Unzip(String zipFile, String root) {
 		super();
 		this.zipFile = zipFile;
-		this.processingFolder = root + "//processing";
+		this.processingFolder = root + "//2-processing";
+		this.doneFolder = root + "//3-done";
 		this.root = root;
 	}
 
 	public static void main(String[] args) throws IOException {
-		Unzip unzip = new Unzip("e://UPLOAD//input//TheCrudder.zip", "E://UPLOAD");
+		Unzip unzip = new Unzip("e://UPLOAD//1-input//TheCrudder.zip", "E://UPLOAD");
 
 		unzip.unzipFunction();
 
 	}
 
 	public void loadIgnoreFiles() throws IOException {
-		ignores = FileUtils.readLines(new File(root + "//ignorefiles.txt"));
+		ignores = FileUtils.readLines(new File(root + "//settings//ignorefiles.txt"));
 	}
 
 	private boolean ignoreMe(String filename) {
@@ -84,6 +86,7 @@ public class Unzip {
 			ZipEntry entry = zipInput.getNextEntry();
         	project.setName(entry.getName().substring(0,  entry.getName().indexOf("/")));
         	project.setDescription("The description new for the " + entry.getName() + " project");
+        	project.setZipFilename(entry.getName().substring(0,  entry.getName().indexOf("/")));
 
 
 			while (entry != null) {
@@ -145,5 +148,10 @@ public class Unzip {
 				directory.mkdirs();
 			}
 		}
+	}
+
+	public void moveToDone() throws IOException {
+		FileUtils.copyFileToDirectory(new File(zipFile), new File(doneFolder), true);	
+		FileUtils.forceDelete(new File(zipFile));
 	}
 }

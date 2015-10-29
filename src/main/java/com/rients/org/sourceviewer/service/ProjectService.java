@@ -34,8 +34,10 @@ public class ProjectService {
 	}
 
 	
-	public void removeProject(int projectId) {
-		projectDao.deleteById(projectId);
+	public void removeProject(int projectId, boolean includingProject) {
+		if (includingProject) {
+			projectDao.deleteById(projectId);
+		}
 		treeDao.deleteById(projectId);
 		fileDao.deleteById(projectId);
 	}

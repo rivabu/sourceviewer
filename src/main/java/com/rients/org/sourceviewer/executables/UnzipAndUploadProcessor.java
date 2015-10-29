@@ -23,6 +23,7 @@ public class UnzipAndUploadProcessor {
 			dirCleaner.cleanup(root);
 			Unzip unzip = new Unzip(zipFile, root);
 			Project project = unzip.unzipFunction();
+			unzip.moveToDone();
 			RestClient client = new RestClient();
 			int projectId = client.store(project);
 			System.out.println("project id: " + projectId);
@@ -37,7 +38,6 @@ public class UnzipAndUploadProcessor {
 			
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

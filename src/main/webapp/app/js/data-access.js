@@ -28,6 +28,13 @@ angular.module('sourceViewer').factory('DataAccess', ['$q', '$resource', functio
             isArray: false
         }
     });
+    
+    var resourceUpdateProject = $resource('/project', {}, {
+        update: {
+            method: 'PUT',
+            isArray: false
+        }
+    });
 
     function getTree(id) {
         var deferred = $q.defer();
@@ -80,6 +87,24 @@ angular.module('sourceViewer').factory('DataAccess', ['$q', '$resource', functio
 
         return deferred.promise;
     }
+    
+    function updateProject(project) {
+        var deferred = $q.defer();
+
+        resourceUpdateProject.update({id: project.id, name: project.name, description: project.description, zipFilename: project.zipFilename},
+            function (success) {
+        		console.log('success: ' + success);
+                deferred.resolve(success);
+            },
+            function (error) {
+            	console.log('error: ' + error);
+                deferred.reject(error);
+            }
+        );
+
+        return deferred.promise;
+    }
+
 
     function getProjects() {
         var deferred = $q.defer();
@@ -102,6 +127,7 @@ angular.module('sourceViewer').factory('DataAccess', ['$q', '$resource', functio
         getTree: getTree,
         getFile: getFile,
         deleteProject: deleteProject,
+        updateProject: updateProject,
         getProjects: getProjects
     };
 }])

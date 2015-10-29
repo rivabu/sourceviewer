@@ -77,7 +77,7 @@ public class FileUploader {
 	}
 
 	public void loadBinaryExtensions() throws IOException {
-		binaryExtensions = FileUtils.readLines(new File(root + "//binaryextensions.txt"));
+		binaryExtensions = FileUtils.readLines(new File(root + "//settings//binaryextensions.txt"));
 	}
 
 }

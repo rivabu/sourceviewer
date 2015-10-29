@@ -7,12 +7,16 @@ public class Initializer {
 
 	public String getZipfile(String root) throws IOException {
 		String zipFilename= "";
-		File directory = new File(root + "//input");
+		File directory = new File(root + "//1-input");
 		if(directory.exists()) {
 		    File[] files = directory.listFiles();
 		    if(files != null) { //some JVMs return null for empty dirs
 			    if (files.length > 1) {
 	            	System.out.println("multiple files found in input directory. Exit");
+					System.exit(-1);
+			    }
+			    if (files.length == 0) {
+			    	System.out.println("no zip file found!");
 					System.exit(-1);
 			    }
 		        for(File f: files) {
@@ -24,7 +28,7 @@ public class Initializer {
 		            }
 		        }
 		    } else {
-				System.out.println("no zip file found!");
+				System.out.println("input directory not found");
 				System.exit(-1);
 		    }
 
