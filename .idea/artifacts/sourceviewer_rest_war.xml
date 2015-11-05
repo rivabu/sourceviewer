@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sourceviewer-rest:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="sourceviewer-rest.war">
+      <element id="artifact" artifact-name="sourceviewer-rest:war exploded" />
+    </root>
+  </artifact>
+</component>
