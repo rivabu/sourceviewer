@@ -18,7 +18,7 @@ public class Uploader {
 	
 	private static int sendProject()
 	{
-	    final String uri = "http://localhost:8081/project";
+	    final String uri = Settings.getInstance().getProperty("endpoint");
 	    Project project = new Project();
 	    project.setName("test project");
 	    project.setDescription("this is a sample project");
@@ -32,7 +32,7 @@ public class Uploader {
 	
 	private static int sendTree(int projectId)
 	{
-	    final String uri = "http://localhost:8081/tree";
+	    final String uri = Settings.getInstance().getProperty("endpoint") + "/tree";
 		Tree tree = new Tree();
 		tree.setId(projectId);
 		List<TreeElement> list = tree.getElements();

@@ -1,6 +1,7 @@
 .jar
 /lib
 /.settings
+/.git
 .class
 .classpath
 .project

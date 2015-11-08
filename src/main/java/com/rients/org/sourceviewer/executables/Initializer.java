@@ -5,9 +5,10 @@ import java.io.IOException;
 
 public class Initializer {
 
+
 	public String getZipfile(String root) throws IOException {
 		String zipFilename= "";
-		File directory = new File(root + "//1-input");
+		File directory = new File(root + Settings.getInstance().getProperty("inputdir"));
 		if(directory.exists()) {
 		    File[] files = directory.listFiles();
 		    if(files != null) { //some JVMs return null for empty dirs

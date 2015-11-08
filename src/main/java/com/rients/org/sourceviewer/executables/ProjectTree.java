@@ -27,7 +27,7 @@ public class ProjectTree {
 	}
 	
 	public Tree generate(int projectId, String projectName, String root) throws IOException {
-		File directory = new File(root + "//2-processing//" + projectName);
+		File directory = new File(root + Settings.getInstance().getProperty("processingdir")  + "//" + projectName);
 		Tree tree = new Tree();
 		tree.setId(projectId);
 		List<TreeElement> list = tree.getElements();

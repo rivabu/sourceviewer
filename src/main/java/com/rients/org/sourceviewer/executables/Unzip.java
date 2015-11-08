@@ -23,8 +23,8 @@ public class Unzip {
 	public Unzip(String zipFile, String root) {
 		super();
 		this.zipFile = zipFile;
-		this.processingFolder = root + "//2-processing";
-		this.doneFolder = root + "//3-done";
+		this.processingFolder = root + Settings.getInstance().getProperty("processingdir") ;
+		this.doneFolder = root + Settings.getInstance().getProperty("donedir") ;
 		this.root = root;
 	}
 
@@ -36,7 +36,7 @@ public class Unzip {
 	}
 
 	public void loadIgnoreFiles() throws IOException {
-		ignores = FileUtils.readLines(new File(root + "//settings//ignorefiles.txt"));
+		ignores = FileUtils.readLines(new File(root + Settings.getInstance().getProperty("settingsdir") + "//ignorefiles.txt"));
 	}
 
 	private boolean ignoreMe(String filename) {

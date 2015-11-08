@@ -7,10 +7,12 @@ import com.rients.org.sourceviewer.domain.Tree;
 
 public class UnzipAndUploadProcessor {
 	String zipFile = null;
-	String root = "E://UPLOAD";
+	String root = "";
 	
 	public static void main(String[] args) {
+		Settings settings = Settings.getInstance(args[0]);
 		UnzipAndUploadProcessor processor = new UnzipAndUploadProcessor();
+		processor.root = settings.getInstance().getProperty("root");
 		processor.proces();
 	}
 
