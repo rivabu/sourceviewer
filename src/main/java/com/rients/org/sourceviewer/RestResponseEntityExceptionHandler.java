@@ -16,13 +16,7 @@ import com.rients.org.sourceviewer.domain.Errors;
 
 @ControllerAdvice
 public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
-	/**
-	 * Handles exception for MissingParameterException
-	 * 
-	 * @param e
-	 *            the MissingParameterException
-	 * @return ResponseEntity<Errors>
-	 */
+
 
 	@Override
 	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status,
