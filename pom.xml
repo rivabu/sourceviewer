@@ -14,6 +14,10 @@
 		<hibernate.version>4.3.5.Final</hibernate.version>
 		<tomcat.target.dev>e:/tools/apache-tomcat-7.0.64/webapps</tomcat.target.dev>
 	</properties>
+
+	<scm>
+		<developerConnection>scm:git:git@github.com/rivabu/sourceviewer.git</developerConnection>
+	</scm>
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
