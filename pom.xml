@@ -2,8 +2,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.rients.sourceviewer</groupId>
 	<artifactId>sourceviewer-rest</artifactId>
-	<version>0.0.14-SNAPSHOT</version>
-	<name>sourceviewer-rest</name>
+	<version>0.0.15-SNAPSHOT</version>
+	<name>sourceviewer-rest</name>g
 	<packaging>war</packaging>
 	<properties>
 		<java-version>1.7</java-version>
