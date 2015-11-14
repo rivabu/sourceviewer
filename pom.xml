@@ -246,16 +246,17 @@
 		<finalName>${project.artifactId}</finalName>
 	</build>
 
+
 	<distributionManagement>
-		<!--repository>
-			<id>ext-release-local</id>
-			<name>rivabu-VirtualBox-releases</name>
-			<url>http://localhost:8081/artifactory/ext-release-local</url>
-		</repository-->
 		<repository>
-			<id>ext-snapshot-local</id>
-			<name>rivabu-VirtualBox-releases2</name>
-			<url>http://localhost:8081/artifactory/libs-snapshot</url>
+			<id>deployment</id>
+			<name>Internal Releases</name>
+			<url>http://localhost:8081/artifactory/libs-release-local/</url>
 		</repository>
+		<snapshotRepository>
+			<id>deployment</id>
+			<name>Internal Releases</name>
+			<url>http://localhost:8081/artifactory/libs-snapshot-local/</url>
+		</snapshotRepository>
 	</distributionManagement>
 </project>
