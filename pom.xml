@@ -247,10 +247,15 @@
 	</build>
 
 	<distributionManagement>
-		<repository>
-			<id>rivabu-VirtualBox</id>
+		<!--repository>
+			<id>ext-release-local</id>
 			<name>rivabu-VirtualBox-releases</name>
 			<url>http://localhost:8081/artifactory/ext-release-local</url>
+		</repository-->
+		<repository>
+			<id>ext-snapshot-local</id>
+			<name>rivabu-VirtualBox-releases2</name>
+			<url>http://localhost:8081/artifactory/ext-snapshot-local</url>
 		</repository>
 	</distributionManagement>
 </project>
