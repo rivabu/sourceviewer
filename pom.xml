@@ -255,7 +255,7 @@
 		<repository>
 			<id>ext-snapshot-local</id>
 			<name>rivabu-VirtualBox-releases2</name>
-			<url>http://localhost:8081/artifactory/ext-snapshot-local</url>
+			<url>http://localhost:8081/artifactory/libs-snapshot</url>
 		</repository>
 	</distributionManagement>
 </project>
