@@ -245,4 +245,12 @@
 		</plugins>
 		<finalName>${project.artifactId}</finalName>
 	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>rivabu-VirtualBox</id>
+			<name>rivabu-VirtualBox-releases</name>
+			<url>http://localhost:8081/artifactory/ext-release-local</url>
+		</repository>
+	</distributionManagement>
 </project>
