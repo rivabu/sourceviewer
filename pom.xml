@@ -237,7 +237,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.3.2</version>
+				<version>2.4.2</version>
 				<configuration>
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 				</configuration>
@@ -249,12 +249,12 @@
 
 	<distributionManagement>
 		<repository>
-			<id>releases</id>
+			<id>local</id>
 			<name>Internal Releases</name>
 			<url>http://localhost:8081/artifactory/libs-release-local/</url>
 		</repository>
 		<snapshotRepository>
-			<id>snapshots</id>
+			<id>local</id>
 			<name>Internal Releases</name>
 			<url>http://localhost:8081/artifactory/libs-snapshot-local/</url>
 		</snapshotRepository>
