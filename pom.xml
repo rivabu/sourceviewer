@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.rients.sourceviewer</groupId>
 	<artifactId>sourceviewer-rest</artifactId>
-	<version>0.0.18-SNAPSHOT</version>
+	<version>0.0.19-SNAPSHOT</version>
 	<name>sourceviewer-rest</name>
 	<packaging>war</packaging>
 	<properties>
@@ -249,12 +249,12 @@
 
 	<distributionManagement>
 		<repository>
-			<id>local</id>
+			<id>mylocal</id>
 			<name>Internal Releases</name>
 			<url>http://localhost:8081/artifactory/libs-release-local/</url>
 		</repository>
 		<snapshotRepository>
-			<id>local</id>
+			<id>mylocal</id>
 			<name>Internal Releases</name>
 			<url>http://localhost:8081/artifactory/libs-snapshot-local/</url>
 		</snapshotRepository>
