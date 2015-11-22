@@ -10,9 +10,9 @@ public class UnzipAndUploadProcessor {
 	String root = "";
 	
 	public static void main(String[] args) {
-		Settings settings = Settings.getInstance(args[0]);
+		//Settings settings = Settings.getInstance(args[0]);
 		UnzipAndUploadProcessor processor = new UnzipAndUploadProcessor();
-		processor.root = settings.getInstance().getProperty("root");
+		processor.root = Settings.getInstance(args[0]).getProperty("root");
 		processor.proces();
 	}
 

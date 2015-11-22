@@ -18,7 +18,6 @@ import com.rients.org.sourceviewer.domain.Type;
 
 import sun.misc.BASE64Encoder;
 
-@SuppressWarnings("restriction")
 public class FileUploader {
 	String root = null;
 	List<String> binaryExtensions = null;

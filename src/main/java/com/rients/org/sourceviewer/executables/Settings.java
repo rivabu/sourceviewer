@@ -37,11 +37,17 @@ public class Settings   {
 
 
     private void load(String env) {
-        InputStream input = null;
-
-        try {
-
-            input = new FileInputStream(env + ".properties");
+    	//Properties prop = new Properties();
+    	InputStream input = null;
+    	
+    	try {
+        
+    		String filename = env + ".properties";
+    		input = Settings.class.getClassLoader().getResourceAsStream(filename);
+    		if(input==null){
+    	            System.out.println("Sorry, unable to find " + filename);
+    		    return;
+    		}
 
             // load a properties file
             prop.load(input);
@@ -67,7 +73,7 @@ public class Settings   {
     }
 
     public static void main(String[] args) {
-        Settings settings = new Settings().getInstance("unix");
+        Settings settings = Settings.getInstance("unix");
         System.out.println(settings.getProperty("rootdir"));
 
 
