@@ -78,7 +78,7 @@ public class ProjectTree {
 		    		list.add(enddir);
 	            	
 	            } else {
-	            	if (f.length() < 5000) {
+	            	if (f.length() < 12000) {
 		            	TreeElement file = new TreeElement();
 		        		file.setId(counter);
 		        		counter++;
@@ -87,6 +87,8 @@ public class ProjectTree {
 		        		file.setExtension(getExtension(f.getName()));
 		        		file.setFileId(f.getCanonicalPath());
 		        		list.add(file);
+	            	} else {
+	            		System.out.println("SKIPPED: file to large: " + f.getName() + " size: " + f.length());
 	            	}
 	            }
 	        }
