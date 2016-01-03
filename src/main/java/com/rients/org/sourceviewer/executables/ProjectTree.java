@@ -2,6 +2,7 @@ package com.rients.org.sourceviewer.executables;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 import com.rients.org.sourceviewer.domain.Tree;
@@ -53,6 +54,7 @@ public class ProjectTree {
 	public void generateStructure(File folder, List<TreeElement> list) throws IOException {
 		
 	    File[] files = folder.listFiles();
+	    Arrays.sort(files);
 	    if(files != null) { //some JVMs return null for empty dirs
 	        for(File f: files) {
 	            if(f.isDirectory()) {
