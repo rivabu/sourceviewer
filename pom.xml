@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.rients.sourceviewer</groupId>
 	<artifactId>sourceviewer-rest</artifactId>
-	<version>0.0.25</version>
+	<version>0.0.26-SNAPSHOT</version>
 	<name>sourceviewer-rest</name>
 	<packaging>war</packaging>
 	<properties>
@@ -18,7 +18,7 @@
 		<connection>scm:git:git@github.com:rivabu/sourceviewer.git</connection>
 		<url>scm:git:git@github.com:rivabu/sourceviewer.git</url>
 		<developerConnection>scm:git:git@github.com:rivabu/sourceviewer.git</developerConnection>
-    	<tag>sourceviewer-rest-0.0.25</tag>
+    	<tag>sourceviewer-rest-0.0.20</tag>
   </scm>
 
 	<dependencies>
