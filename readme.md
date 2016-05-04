@@ -20,7 +20,7 @@ heroku
 
 cd E:\java\STS-workspace\sourceviewer
 
-heroku login
+heroku login (rientsvanburen@gmail.com / xxx01)
 
 commit push changes to repo
 
